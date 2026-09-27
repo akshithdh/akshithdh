@@ -1,4 +1,6 @@
-Software engineer. Python and TypeScript — data pipelines, validation systems, real-time product features.
+Software engineer — **Node.js** and TypeScript. Realtime systems, APIs, and the automation in between.
+
+Competitive programmer. LeetCode **1986**, top ~2%, 620+ problems solved.
 
 <sub>My previous GitHub account was lost and can't be recovered. If you knew me from there, [this](https://github.com/akshithdh) is the new one — the old commits and stars didn't come with it.</sub>
 
