@@ -7,30 +7,61 @@
 </p>
 
 <p align="center">
-  <sub>Software engineer at <b>Wise</b> &nbsp;·&nbsp; Bengaluru, India &nbsp;·&nbsp; <a href="mailto:akshithdh@gmail.com">akshithdh@gmail.com</a></sub>
+  <sub>Bengaluru, India &nbsp;·&nbsp; <a href="mailto:akshithdh@gmail.com">akshithdh@gmail.com</a> &nbsp;·&nbsp; <a href="#projects">Projects</a> &nbsp;·&nbsp; <a href="#stack">Stack</a></sub>
 </p>
 
 <br>
 
-I work on distributed systems, real-time infrastructure, and the automation layer in between.
+Software engineer. B.Tech Computer Science (2026).
 
-Most of what I build lives in the gap where the naive version works fine on your laptop and falls over under load or with three users instead of one — state that has to stay consistent, work that has to finish without supervision, and interfaces that stay honest while all of it happens underneath.
-
-I'm more interested in the parts people skip: the retry that actually retries, the migration that doesn't lock the table, the error message that tells you what to do next.
+I build data pipelines and validation systems in Python, and real-time product features in TypeScript. Most of my work sits in rule-driven systems — high-volume structured data, exception analysis, and the automation that removes the manual step.
 
 ---
 
-## how I think about problems
+<a name="projects"></a>
 
-**Concurrency that doesn't lie.** WebRTC mesh topologies, signaling servers, TURN fallback for when the network gives up. Designed around eventual consistency instead of the illusion of immediate consistency.
+## projects
 
-**Pipelines that finish on their own.** Dependency graphs where execution order is *derived* rather than hardcoded. Independent work runs in parallel, failures stay isolated, and every run is replayable after the fact.
+<table>
+<tr><td valign="top" width="18%">
 
-**Keeping models in a small box.** AI features where the probabilistic part is deliberately narrow — read the label, find the SKU — and deterministic code does the deciding. Narrower surface, easier to test, easier to trust, far easier to debug at 2am.
+**Weaave**
+<sub>Next.js · TypeScript · Gemini API · Trigger.dev · Prisma · PostgreSQL</sub>
 
-**Interfaces that stay responsive.** Optimistic updates, delta sync instead of full re-renders, and a real loading state for every state.
+</td><td valign="top">
+
+Visual DAG workflow orchestrator. Nodes are placed on a canvas and validated for types and cycles, then executed by a parallel engine that resolves dependencies topologically and offloads Gemini multimodal and FFmpeg work to cloud workers.
+Every node records its input, output, and duration in a PostgreSQL-backed run history, and failures propagate a skip signal downstream instead of stalling the run.
+<sub>Unit and integration tests on node execution and API contracts.</sub>
+
+</td></tr>
+<tr><td valign="top">
+
+**PairLane**
+<sub>Next.js · Node.js · Express · Socket.IO · WebRTC · Monaco · MongoDB</sub>
+
+</td><td valign="top">
+
+Browser-based collaborative coding rooms: shared workspaces, live cursors, presence, drawing overlays, and mesh video calls.
+Editor sync was reworked from full-document replacement to operation-based Monaco delta edits over Socket.IO, which cut payload size and holds sub-30ms sync latency. WebRTC full-mesh signaling with a self-hosted coturn TURN fallback for restrictive networks.
+<sub>Unit tests over editor-sync and signaling logic.</sub>
+
+</td></tr>
+<tr><td valign="top">
+
+**Job Agent**
+<sub>Python · SQLite · Ollama · AsyncIO</sub>
+
+</td><td valign="top">
+
+Automated job search engine. Parses company career pages, isolates openings, and ranks them using four configurable match and opportunity-scoring parameters. Local LLMs through Ollama compile tailored application profiles and recruiter outreach drafts from user data — no data leaves the machine.
+
+</td></tr>
+</table>
 
 ---
+
+<a name="stack"></a>
 
 ## stack
 
@@ -39,19 +70,28 @@ I'm more interested in the parts people skip: the retry that actually retries, t
 <td valign="top" width="50%">
 
 **Languages**
-<sub>TypeScript · JavaScript · Python · SQL · Bash</sub>
+<sub>C++ · Java · Python · JavaScript · TypeScript · SQL</sub>
+
+**Backend &amp; real-time**
+<sub>Node.js · Express · REST · WebSockets · Socket.IO · WebRTC · coturn</sub>
 
 **Frontend**
-<sub>React · Next.js · Monaco · Tailwind</sub>
+<sub>Next.js · React · Monaco · Tailwind · HTML · CSS</sub>
 
 </td>
 <td valign="top" width="50%">
 
-**Real-time &amp; backend**
-<sub>Node.js · WebRTC · Socket.IO · WebSockets · coturn (TURN) · REST · PostgreSQL · Redis</sub>
+**Data**
+<sub>PostgreSQL · MongoDB Atlas · SQLite</sub>
+
+**Testing**
+<sub>Jest · Pytest · unit &amp; integration testing</sub>
 
 **Infrastructure**
-<sub>Docker · GitHub Actions · Nginx · Vercel</sub>
+<sub>Linux · Nginx · PM2 · Vercel · GitHub Actions · Docker</sub>
+
+**Core CS**
+<sub>Data structures &amp; algorithms · distributed systems · operating systems · computer networks</sub>
 
 </td>
 </tr>
@@ -59,23 +99,11 @@ I'm more interested in the parts people skip: the retry that actually retries, t
 
 ---
 
-## repositories worth a look
-
-| | repository | what it demonstrates |
-|---|---|---|
-| **01** | [**Weaave**](https://github.com/akshithdh/Weaave) | A dependency graph where execution order is resolved at runtime, independent nodes are scheduled in parallel, and each run persists enough state to explain itself. |
-| **02** | [**PackCheck**](https://github.com/akshithdh/PackCheck) | Perception delegated to a vision model, the verdict left to deterministic rules — then reconciling every label against a packing list and calling the result. |
-
----
-
 ## currently
 
-```text
-day job       rules & decisioning for customer due diligence @ Wise
-building      AI workflow orchestration, realtime collaboration
-sharpening    distributed systems, system design, the parts of C++ I keep avoiding
-leetcode      1986 — top 2% · peak contest rank 193 / 29,215
-```
+- LeetCode **1986** — top ~2% globally, 620+ problems solved. Weekly Contest 476: **193 / 29,215** (top 0.66%)
+- Building agent pipelines and real-time collaboration tooling
+- **Open to full-time software engineering roles**
 
 ---
 
@@ -88,5 +116,3 @@ leetcode      1986 — top 2% · peak contest rank 193 / 29,215
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="mailto:akshithdh@gmail.com">Email</a>
 </p>
-
-<p align="center"><sub>Happy to talk about hard distributed problems, or to review PRs on anything in the stack above.</sub></p>
