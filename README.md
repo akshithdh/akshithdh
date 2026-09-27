@@ -7,24 +7,28 @@
 </p>
 
 <p align="center">
-  <sub>Software Engineer at <b>Wise</b> &nbsp;·&nbsp; Bengaluru, India &nbsp;·&nbsp; <a href="mailto:akshithdh@gmail.com">akshithdh@gmail.com</a></sub>
+  <sub>Software engineer at <b>Wise</b> &nbsp;·&nbsp; Bengaluru, India &nbsp;·&nbsp; <a href="mailto:akshithdh@gmail.com">akshithdh@gmail.com</a></sub>
 </p>
 
 <br>
 
-> I build software that stays quiet under load.
-> Real-time systems, backend architecture, and automation — the parts nobody claps for, done properly.
+I work on distributed systems, real-time infrastructure, and the automation layer in between.
+
+Most of what I build lives in the gap where the naive version works fine on your laptop and falls over under load or with three users instead of one — state that has to stay consistent, work that has to finish without supervision, and interfaces that stay honest while all of it happens underneath.
+
+I'm more interested in the parts people skip: the retry that actually retries, the migration that doesn't lock the table, the error message that tells you what to do next.
 
 ---
 
-## what i work on
+## how I think about problems
 
-<table>
-<tr><td width="34"><code>01</code></td><td><b>Distributed &amp; real-time systems</b><br><sub>WebRTC mesh, WebSocket signaling, cross-tab state sync. Concurrency and eventual consistency are my lane.</sub></td></tr>
-<tr><td width="34"><code>02</code></td><td><b>Full-stack product engineering</b><br><sub>TypeScript end to end — frontends that feel instant, backends that hold up. Shipped coherent, not stitched.</sub></td></tr>
-<tr><td width="34"><code>03</code></td><td><b>Automation &amp; AI orchestration</b><br><sub>Workflows that run themselves: steps resolve their own order, independent ones run concurrently, model calls sit in the middle of it.</sub></td></tr>
-<tr><td width="34"><code>04</code></td><td><b>Algorithms &amp; systems thinking</b><br><sub>LeetCode <b>1986</b> — top 2% globally, contest rank <b>193 / 29,215</b>. Not a flex; it's how I debug and design.</sub></td></tr>
-</table>
+**Concurrency that doesn't lie.** WebRTC mesh topologies, signaling servers, TURN fallback for when the network gives up. Designed around eventual consistency instead of the illusion of immediate consistency.
+
+**Pipelines that finish on their own.** Dependency graphs where execution order is *derived* rather than hardcoded. Independent work runs in parallel, failures stay isolated, and every run is replayable after the fact.
+
+**Keeping models in a small box.** AI features where the probabilistic part is deliberately narrow — read the label, find the SKU — and deterministic code does the deciding. Narrower surface, easier to test, easier to trust, far easier to debug at 2am.
+
+**Interfaces that stay responsive.** Optimistic updates, delta sync instead of full re-renders, and a real loading state for every state.
 
 ---
 
@@ -35,27 +39,19 @@
 <td valign="top" width="50%">
 
 **Languages**
-<sub>
-TypeScript · JavaScript · Python · SQL · Bash
-</sub>
+<sub>TypeScript · JavaScript · Python · SQL · Bash</sub>
 
 **Frontend**
-<sub>
-React · Next.js · Monaco · Tailwind · vanilla DOM
-</sub>
+<sub>React · Next.js · Monaco · Tailwind</sub>
 
 </td>
 <td valign="top" width="50%">
 
 **Real-time &amp; backend**
-<sub>
-Node.js · WebRTC · Socket.IO · WebSockets · coturn (TURN) · REST · PostgreSQL · Redis
-</sub>
+<sub>Node.js · WebRTC · Socket.IO · WebSockets · coturn (TURN) · REST · PostgreSQL · Redis</sub>
 
 **Infrastructure**
-<sub>
-Docker · GitHub Actions · Nginx · Vercel
-</sub>
+<sub>Docker · GitHub Actions · Nginx · Vercel</sub>
 
 </td>
 </tr>
@@ -63,36 +59,34 @@ Docker · GitHub Actions · Nginx · Vercel
 
 ---
 
-## selected work
+## repositories worth a look
 
-| | project | what it is |
+| | repository | what it demonstrates |
 |---|---|---|
-| **01** | [**Weaave**](https://github.com/akshithdh/Weaave) | Visual AI workflow builder. Steps live on a canvas, the DAG resolves its own execution order, independent nodes run in parallel, and every run is persisted so you can trace exactly what each step did. |
-| **02** | [**PackCheck**](https://github.com/akshithdh/PackCheck) | Evidence-backed delivery verification. A vision model reads the photos — SKU labels, unit markers — and does nothing else. TypeScript reconciles every label against the packing list and issues the verdict: <code>verified</code>, <code>wrong_item</code>, <code>reshoot</code>. Perception is the model's job. Proof is code's. |
-| **03** | *PairLane* | Video calls plus a live collaborative editor. WebRTC mesh for media, Socket.IO signaling, coturn relay, Monaco delta-sync for shared files. |
-| **04** | *Job Agent* | Automated agent that watches boards, tailors applications to a profile, and tracks the funnel end to end. |
+| **01** | [**Weaave**](https://github.com/akshithdh/Weaave) | A dependency graph where execution order is resolved at runtime, independent nodes are scheduled in parallel, and each run persists enough state to explain itself. |
+| **02** | [**PackCheck**](https://github.com/akshithdh/PackCheck) | Perception delegated to a vision model, the verdict left to deterministic rules — then reconciling every label against a packing list and calling the result. |
 
 ---
 
 ## currently
 
 ```text
-role        software engineer @ Wise
-focusing    customer due diligence — rules & decisioning
-building    AI workflow orchestration, realtime collaboration
-learning    distributed systems, deeper
+day job       rules & decisioning for customer due diligence @ Wise
+building      AI workflow orchestration, realtime collaboration
+sharpening    distributed systems, system design, the parts of C++ I keep avoiding
+leetcode      1986 — top 2% · peak contest rank 193 / 29,215
 ```
 
 ---
 
 <p align="center">
   <a href="https://github.com/akshithdh">GitHub</a>
-  &nbsp;&nbsp;/&nbsp;&nbsp;
+  &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="https://leetcode.com/akshitxd">LeetCode</a>
-  &nbsp;&nbsp;/&nbsp;&nbsp;
+  &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/akshitxdhiman/">LinkedIn</a>
-  &nbsp;&nbsp;/&nbsp;&nbsp;
+  &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="mailto:akshithdh@gmail.com">Email</a>
 </p>
 
-<p align="center"><sub>Open to distributed problems and interesting problems alike.</sub></p>
+<p align="center"><sub>Happy to talk about hard distributed problems, or to review PRs on anything in the stack above.</sub></p>
